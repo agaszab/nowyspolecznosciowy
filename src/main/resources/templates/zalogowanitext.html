@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!-- strona powitanie  -->
+
+<span th:fragment="witaj">
+<h1 class="main_heading" th:text="'Witaj '+${user.name}"></h1>
+<h2>Jakiś tam nagłówek powitalny</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla aliquam ligula sagittis pellentesque. Sed pretium volutpat cursus. Nunc sed diam erat, hendrerit commodo enim. Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Quisque ut lacus eget odio elementum elementum eget ac velit. Aliquam adipiscing volutpat lacus, sed iaculis tortor tempus ac. Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget.</p>
+<h3>Maecenas augue</h3>
+<p>Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. </p>
+<div class="seperator"></div>
+<div class="left_box">
+    <p><img src="images/icon1.png" class="align_left" width="80" height="107" alt="" /> <strong>Sed blandit molestie<br />
+    </strong> Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget.</p>
+</div>
+<div class="right_box">
+    <p><img src="images/icon2.png" class="align_left" width="102" height="107" alt="" /> <strong>Phasellus pretium</strong> Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat.</p>
+</div>
+</span>
+
+<!-- send glowna  -->
+
+<!-- strona znajomi  -->
+
+<span th:fragment="znajomi">
+<h1 class="main_heading">Twoi znajomi</h1>
+<h2>Jakiś tam nagłówek powitalny</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla aliquam ligula sagittis pellentesque. Sed pretium volutpat cursus. Nunc sed diam erat, hendrerit commodo enim. Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Quisque ut lacus eget odio elementum elementum eget ac velit. Aliquam adipiscing volutpat lacus, sed iaculis tortor tempus ac. Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget.</p>
+<h3>Maecenas augue</h3>
+<p>Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. </p>
+
+</span>
+
+<!-- end znajomi  -->
+
+<!-- strona zaproszenia  -->
+
+<span th:fragment="zaproszenia">
+<h1 class="main_heading">Osoby zapraszające Cię</h1>
+<h2>Jakiś tam nagłówek powitalny</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla aliquam ligula sagittis pellentesque. Sed pretium volutpat cursus. Nunc sed diam erat, hendrerit commodo enim. Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Quisque ut lacus eget odio elementum elementum eget ac velit. Aliquam adipiscing volutpat lacus, sed iaculis tortor tempus ac. Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget.</p>
+<h3>Maecenas augue</h3>
+<p>Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. </p>
+
+</span>
+
+<!-- end zaproszenia  -->
+
+<!-- strona profil  -->
+
+<span th:fragment="profil">
+<h1 class="main_heading" >Twój profil</h1>
+<span  th:object="${user}">
+    <h2 th:text="'Profil użytkownika: '+*{username}" style="margin-top:200px; test-align:center;"></h2>
+
+     <p th:text="'Imię: '+*{name}"></p>
+     <p th:text="'Nazwisko: '+*{surname}"></p>
+     <p th:text="'E-mail: '+*{email}"></p>
+     <p> Zdjęcie profilowe: <img th:src="*{img}" width="100"></p>
+
+
+    <div class="op border border-white rounded">
+
+        <a th:if="${doProfilu==3 || doProfilu==1}" th:href="'/edycja?id='+*{id}">
+            <button type="submit" class="btn btn-primary">Edytuj dane</button>
+        </a>
+        <a th:if="${doProfilu==2}" th:href="'/zaproszenie?zid='+*{id}" style="margin-left:30px;">
+            <button type="submit" class="btn btn-primary">Zaproś do znajomych</button>
+        </a>
+    </div>
+</span>
+
+</span>
+
+<!-- end  profil -->
+
+</body>
+</html>

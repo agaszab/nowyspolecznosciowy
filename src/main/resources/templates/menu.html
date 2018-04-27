@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- Menu  -->
+<div> // wszyscy
+    <ul th:fragment="menu1">
+        <li><a href="/index?strona=glowna">Home</a><span class="nave_text">Strona główna portalu</span></li>
+        <li><a href="/index?strona=login">Zaloguj&nbsp;się</a><span class="nave_text">Przejdź na swoje konto</span></li>
+        <li><a href="/index?strona=rejestracja">Rejestracja</a><span class="nave_text">Dołącz do nas</span></li>
+        <li><a href="/index?strona=kontakt">Kontakt</a><span class="nave_text">Napisz do nas</span></li>
+    </ul>
+</div>
+
+<div> // zalogowani
+    <ul th:fragment="menu2">
+        <li><a href="/profil">Mój&nbsp;profil</a><span class="nave_text">Moje dane</span></li>
+        <li><a href="/znajomi">Znajomi</a><span class="nave_text">Moi znajomi</span></li>
+        <li><a href="/zaproszenia">Zaproszenia</a><span class="nave_text">Zapraszają Cię</span></li>
+        <li><a href="/zaproszenia">Użytkownicy</a><span class="nave_text">Lista użytwkoników</span></li>
+        <li><a href="/wyloguj">Wyloguj&nbsp;się</a></li>
+    </ul>
+</div>
+
+
+<div> // admin
+    <ul th:fragment="menu3">
+
+        <li><a href="/panel/users?a=true">Lista użytkowników aktywnych</a></li>
+        <li><a href="/panel/szukaj">Wyszukaj użytkownika</a></li>
+        <li><a href="/panel/users?a=false">Lista oczekujących na aktywację</a></li>
+        <li><a href="/profil?doProfilu=1">Twój profil</a></li>
+        <li><a href="/lindex">Menu użytkownikow</a></li>
+        <li><a href="/wyloguj">Wyloguj się</a></li>
+    </ul>
+</div>
+
+<!-- formularz kontaktowy  -->
+<span  th:fragment="kontaktright">
+<h3>Napisz do nas</h3>
+<div id="form_container">
+    <form action="#" method="post" id="commentform">
+        <fieldset>
+            <legend>Wyślij wiadomość</legend>
+            <p><label for="author"><small>Imię </small></label><input type="text" name="author" class="input_bg" value="" size="22" tabindex="1" /></p>
+            <p><label for="email"><small>E-mail</small></label><input type="text" name="email" class="input_bg" value="" size="22" tabindex="2" /></p>
+            <p> <textarea name="comment" class="input_bg" cols="50%" rows="10" tabindex="4"></textarea></p>
+            <p><input name="submit" type="submit" id="submit" tabindex="5" value="Wyślij" /></p>
+        </fieldset>
+    </form>
+</div>
+</span>
+<!-- end formularz kontaktowy  -->
+
+
+<!-- login boczne -->
+<span th:fragment="logintop">
+<h3>Logowanie</h3>
+<div id="form_container">
+ <form action="/login" method="post" id="commentform">
+        <fieldset>
+            <legend>Zaloguj się</legend>
+            <p><label for="user"><small>login: </small></label><input type="text" name="author" class="input_bg" value="" size="22" tabindex="1" /></p>
+            <p><label for="pass"><small>hasło: </small></label> <input type="password" name="password" class="input_bg"  id="pass" placeholder="Wpisz hasło"/></p>
+            <p><input name="submit" type="submit" id="submit" tabindex="5" value="Zaloguj" /></p>
+        </fieldset>
+</form>
+</div>
+</span>
+<!-- end login  -->
+
+
+
+<!-- stopka  -->
+<span th:fragment="stopka">
+
+<div id="footer">Betulia: <a href="http://www.csstemplateheaven.com">Projekt Java</a>
+    <div id="sharethis">
+        <ul>
+            <li><a href="#" class="twitter"><span>Twitter</span></a></li>
+            <li><a href="#" class="facebook"><span>Facebook</span></a></li>
+            <li><a href="#" class="rss"><span>RSS feed</span></a></li>
+        </ul>
+    </div>
+</div>
+
+</span>
+<!-- end stopka  -->
+
+
+
+
+<!-- strona glowna  -->
+
+<span th:fragment="glowna">
+<h1 class="main_heading">Witamy Cię na naszej stronie Znajomi Net</h1>
+<h2>Jakiś tam nagłówek powitalny</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla aliquam ligula sagittis pellentesque. Sed pretium volutpat cursus. Nunc sed diam erat, hendrerit commodo enim. Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Quisque ut lacus eget odio elementum elementum eget ac velit. Aliquam adipiscing volutpat lacus, sed iaculis tortor tempus ac. Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget.</p>
+<h3>Maecenas augue</h3>
+<p>Vestibulum id rutrum erat. Maecenas augue neque, fringilla sit amet hendrerit sed, vestibulum vitae neque. Aenean mattis, risus et auctor feugiat, libero augue adipiscing purus, ac porta arcu lacus quis velit. </p>
+<div class="seperator"></div>
+<div class="left_box">
+    <p><img src="images/icon1.png" class="align_left" width="80" height="107" alt="" /> <strong>Sed blandit molestie<br />
+    </strong> Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat ante tincidunt eget.</p>
+</div>
+<div class="right_box">
+    <p><img src="images/icon2.png" class="align_left" width="102" height="107" alt="" /> <strong>Phasellus pretium</strong> Phasellus nec nulla id nisi tempus faucibus at vitae libero. Sed blandit molestie sapien quis vestibulum. Phasellus pretium placerat urna, vel feugiat.</p>
+</div>
+</span>
+
+<!-- send glowna  -->
+
+
+<!-- strona logowanie  -->
+<span th:fragment="login">
+<h2>Logowanie</h2>
+<p>
+<form action="/login" method="post">
+    <div class="form-group">
+        <label for="user">Nazwa użytkownika</label>
+        <input type="text" name="username" class="input_bg" id="user" placeholder="Wpisz swój login"/>
+    </div>
+    <div class="form-group">
+        <label for="pass">Hasło</label>
+        <input type="password" name="password" class="input_bg" id="pass" placeholder="Wpisz hasło"/>
+    </div>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="submit" value="zaloguj">
+</form>
+    </p></span>
+<!-- end logowanie  -->
+
+
+
+<!-- strona rejestracja  -->
+<span th:fragment="rejestracja">
+    <h2>Rejestracja użytkownika</h2>
+<p>
+<form action="/register" method="post" th:object="${user}">
+    <div class="form-group">
+        <label for="user">Nazwa użytkownika (login)</label>
+        <input type="text" th:field="*{username}" class="input_bg" id="user"  placeholder="Wpisz swój login"/>
+    </div>
+    <div class="form-group">
+        <label for="pass">Hasło</label>
+        <input type="password" th:field="*{password}" class="input_bg" id="pass"  placeholder="Wpisz hasło"/>
+    </div>
+    <div class="form-group">
+        <label for="name">Imię</label>
+        <input type="text" th:field="*{name}" class="input_bg" id="name"  placeholder="Wpisz swoje imię"/>
+    </div>
+    <div class="form-group">
+        <label for="surname">Nazwisko</label>
+        <input type="text" th:field="*{surname}" class="input_bg" id="surname"  placeholder="Wpisz nazwisko"/>
+    </div>
+    <div class="form-group">
+        <label for="email">Adres e-mail</label>
+        <input type="text" th:field="*{email}" class="input_bg" id="email"  placeholder="Wpisz swój e-mail"/>
+    </div>
+    <div class="form-group">
+        <label for="img">Wklej url do zdjęcia profilowego</label>
+        <input type="text" th:field="*{img}" class="input_bg" id="img"  placeholder="Wpisz swój e-mail"/>
+    </div>
+    <div class="form-group">
+        <label for="img">Wklej url do zdjęcia profilowego</label>
+        <textarea th:field="*{description}" class="input_bg" id="img"  placeholder="Wpisz swój e-mail"/>
+    </div>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="submit" value="zarejestruj mnie">
+</form>
+    </p>
+</span>
+<!-- end rejestracja  -->
+
+
+<!-- strona kontakt  -->
+<span th:fragment="kontakt">
+<h2>Napisz do nas</h2>
+<p>
+<form action="/kontakt" method="post">
+    <div class="form-group">
+        <label for="first_name">Imię</label>
+        <input type="text" name="first_name" class="form-control" id="first_name"  placeholder="Wpisz swoje imię"/>
+    </div>
+    <div class="form-group">
+        <label for="email">Adres e-mail</label>
+        <input type="text" name="email" class="form-control" id="email"  placeholder="Wpisz swój e-mail"/>
+    </div>
+    <div class="form-group">
+        <label for="news">Wiadomość</label>
+        <textarea class="form-control" id="news" name="wiadomosc"></textarea>
+    </div>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="submit" value="Wyślij">
+</form>
+    </p>
+</span>
+<!-- end kontakt  -->
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>Minimalist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script type="text/javascript" src="js/jquery.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".pane-list li").click(function () {
+        window.location = $(this).find("a").attr("href");
+        return false;
+    });
+});
+</script>
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- menu -->
+  <div id="nave">
+    <div id="logo"><a href="index.html"><img src="images/logo.png" width="242" height="85" alt="" /></a></div>
+      <!--    <ul th:unless="${user}" th:include="fragments :: menu1" class="navebar navebar-default"></ul> -->
+          <ul th:if="${user}==null" th:include="menu :: menu1" class="navebar navebar-default"></ul>
+          <ul th:if="${user}!=null" th:include="menu :: menu2" class="navbar navbar-default"></ul>
+         </div>
+         <!-- end menu -->
+
+
+ <img src="images/photo1.jpg" alt="" style="margin-bottom:20px"/>
+
+  <!-- end header -->
+
+
+
+  <div id="left">
+  <span th:if="${str}=='witaj'" th:include="zalogowanitext :: witaj"></span>
+  <span th:if="${str}=='profil'" th:include="zalogowanitext :: profil"></span>
+  <span th:if="${str}=='znajomi'" th:include="zalogowanitext :: znajomi"></span>
+  <span th:if="${str}=='zaproszenia'" th:include="zalogowanitext :: zaproszenia"></span>
+  </div>
+  <!-- close left -->
+
+
+
+
+  <div id="right">
+    <h3>Recent Projects</h3>
+    <ul class="pane-list">
+      <li><img src="images/thumb1.jpg" width="46" height="46" alt="" />
+        <h2 class="latest_products_heading"><a href="page.html">Macbook Mini</a></h2>
+        <p class="product_text">Praesent commodo tempus leo, sed aliquet velit tincidunt et. In hac habitasse platea dictumst.</p>
+      </li>
+      <li><img src="images/thumb2.jpg" width="46" height="46" alt="" />
+        <h2 class="latest_products_heading"><a href="page.html">Macbook Pro</a></h2>
+        <p class="product_text">Proin sollicitudin porta hendrerit. Vivamus fermentum leo eget tellus luctus</p>
+      </li>
+      <li><img src="images/thumb3.jpg" width="46" height="46" alt="" />
+        <h2 class="latest_products_heading"><a href="page.html">Iphone Black</a></h2>
+        <p class="product_text">Mauris pulvinar porta tincidunt. Morbi luctus, lacus nec commodo condimentum</p>
+      </li>
+    </ul>
+
+
+   <span th:include="menu :: kontaktright"></span>
+
+
+    <!-- close form_container -->
+  </div>
+
+  <!-- close right -->
+</div>
+
+
+<!-- close container -->
+
+<span th:include="menu :: stopka"></span>
+
+</body>
+</html>
